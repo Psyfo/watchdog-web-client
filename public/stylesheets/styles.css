@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: noteworthy;
+  src: url(../fonts/noteworthy-bold.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: minion;
+  src: url(../fonts/minion-pro-regular.ttf);
+}
+body {
+  font-family: "minion", "sans-serif";
+}
+
+.minion {
+  font-family: "minion", "sans-serif";
+}
+
+.noteworthy {
+  font-family: "noteworthy", "sans-serif";
+}
+
+.heading--noteworthy {
+  font-family: "noteworthy", "sans-serif";
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-yellow {
+  color: #d9e026ff !important;
+}
+
+.jumbotron {
+  background: url("../images/background3.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 2rem;
+  min-height: 40vh;
+}
+
+.footer {
+  padding: 4rem 3rem;
+}
+
+.nav-item.active {
+  border-bottom: 2px dot black;
+}
+
+.section__home--banner {
+  height: 50vh;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.section__home--content {
+  padding: 5rem 3rem;
+}
+.section__home--features {
+  padding: 2rem 4rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.divider {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 5px solid #000000 !important;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.section__about--banner {
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 40vh;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.section__about--features {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.section__about--philosophies {
+  height: 50vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.divider--2 {
+  margin: 24px 0px;
+  width: 65%;
+  border-top: 10px solid white;
+}
+
+.feature {
+  flex-grow: 1;
+  flex-basis: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.feature__icon {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.feature__content {
+  font-size: 1.4rem;
+}
+
+.philosophy__statement {
+  flex-grow: 1;
+  flex-basis: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.philosophy__statement--text {
+  font-size: 1.2rem;
+  color: #ffffff !important;
+}
+.philosophy__slogan {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "minion", "sans-serif";
+}
+.philosophy__slogan--text {
+  font-family: "noteworthy", "sans-serif";
+  color: #d9e026ff !important;
+}
+.philosophy__slogan--divider {
+  height: 60%;
+  border-left: 10px solid #d9e026ff !important;
+}
+
+/*# sourceMappingURL=styles.css.map */

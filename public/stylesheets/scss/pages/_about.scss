@@ -1,0 +1,97 @@
+.section {
+    &__about {
+        &--banner {
+            padding: 3rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            height: 40vh;
+            background-image: linear-gradient(
+                    to right,
+                    transparent,
+                    transparent
+                ),
+                url(../../../images/4x/background-1-4x.png);
+            background-size: cover;
+        }
+
+        &--features {
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &--philosophies {
+            height: 50vh;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: black;
+        }
+    }
+}
+
+.divider--2 {
+    margin: 24px 0px;
+    width: 65%;
+    border-top: 10px solid white;
+}
+
+.feature {
+    flex-grow: 1;
+    flex-basis: 33.33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &__icon {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    &__title {
+    }
+
+    &__content {
+        font-size: 1.4rem;
+    }
+}
+
+.philosophy {
+    &__statement {
+        flex-grow: 1;
+        flex-basis: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        &--text {
+            font-size: 1.2rem;
+            color: $color-white;
+        }
+    }
+
+    &__slogan {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-family: $font-minion;
+
+        &--image {
+        }
+        &--text {
+            font-family: $font-noteworthy;
+            color: $color-yellow;
+        }
+        &--divider {
+            height: 60%;
+            border-left: 10px solid $color-yellow;
+        }
+    }
+}

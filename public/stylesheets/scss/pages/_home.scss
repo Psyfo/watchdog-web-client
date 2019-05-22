@@ -1,0 +1,34 @@
+.section {
+    &__home {
+        &--banner {
+            height: 50vh;
+            background-image: linear-gradient(
+                    to right,
+                    transparent,
+                    transparent
+                ),
+                url(../../../images/4x/background-1-4x.png);
+            background-size: cover;
+        }
+
+        &--content {
+            padding: 5rem 3rem;
+        }
+
+        &--features {
+            padding: 2rem 4rem 3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+.divider {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 5px solid $color-black;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}

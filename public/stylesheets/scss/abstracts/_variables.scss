@@ -1,0 +1,21 @@
+// COLORS
+$color-white: #ffffff !important;
+$color-black: #000000 !important;
+$color-yellow: #d9e026ff !important;
+
+// FONT
+@font-face {
+    font-family: noteworthy;
+    src: url(../fonts/noteworthy-bold.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: minion;
+    src: url(../fonts/minion-pro-regular.ttf);
+}
+
+// $default-font-size: 1.6rem;
+$font-minion: 'minion', 'sans-serif';
+$font-noteworthy: 'noteworthy', 'sans-serif';
+
+// BOX SHADOWS
