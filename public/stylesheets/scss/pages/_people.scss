@@ -1,0 +1,80 @@
+.people {
+    &__banner {
+        height: 35vh;
+        padding: 3rem 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to right, transparent, transparent),
+            url(../../../images/4x/background-1-4x.png);
+        background-size: cover;
+
+        &--title {
+            font-size: 4rem !important;
+            font-family: $font-noteworthy;
+            color: $color-white;
+        }
+
+        &--divider {
+            margin: 2.4rem 0rem;
+            width: 65%;
+            border-top: 10px solid white;
+        }
+
+        &--text {
+            font-size: 2.5rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+    }
+
+    &__content {
+        padding: 2rem 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__reel {
+        height: 35vh;
+        flex-basis: 100%;
+        flex-grow: 1;
+        margin: 0;
+        width: 100%;
+        padding: 7rem 3rem;
+        background: linear-gradient(to right, transparent, transparent),
+            url(../../../images/custom/reel_border.svg);
+        background-size: cover;
+        background-repeat: no-repeat !important;
+
+        &--content {
+            flex-grow: 1;
+            height: inherit;
+            background: linear-gradient(to right, transparent, transparent),
+                url(../../../images/custom/splat_yellow.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+        }
+
+        &--title {
+            width: 60%;
+            height: 50%;
+            background-image: linear-gradient(
+                    to right,
+                    transparent,
+                    transparent
+                ),
+                url(../../../images/custom/splat_black.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            font-size: 3.8rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+    }
+}

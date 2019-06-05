@@ -1,34 +1,57 @@
-.section {
-    &__home {
-        &--banner {
-            height: 50vh;
-            background-image: linear-gradient(
-                    to right,
-                    transparent,
-                    transparent
-                ),
-                url(../../../images/4x/background-1-4x.png);
-            background-size: cover;
+.home {
+    &__banner {
+        position: relative;
+        height: 50vh;
+        background-image: linear-gradient(to right, transparent, transparent),
+            url(../../../images/4x/background-1-4x.png);
+        background-size: cover;
+
+        &--logo {
+            height: 25rem;
+            position: absolute;
+            bottom: 6rem;
+            z-index: 1000;
         }
 
-        &--content {
-            padding: 5rem 3rem;
-        }
-
-        &--features {
-            padding: 2rem 4rem 3rem;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+        &--text {
+            font-size: 3rem;
+            color: $color-white;
+            font-family: $font-noteworthy;
+            position: absolute;
+            bottom: 3rem;
+            right: 10rem;
         }
     }
-}
 
-.divider {
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 5px solid $color-black;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    &__welcome {
+        padding: 5rem 8rem;
+
+        &--title {
+            font-size: 3rem;
+            font-family: $font-noteworthy;
+        }
+
+        &--divider {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 5px solid $color-black;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        &--text {
+            font-size: 2.5rem;
+            font-family: $font-minion;
+        }
+    }
+
+    &__features {
+        padding: 3rem 2rem;
+        display: flex;
+        flex-basis: 33%;
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

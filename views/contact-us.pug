@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    .container
+        section.contact__banner
+            .contact__banner--title Contact Us
+            .contact__banner--divider
+            .contact__banner--text
+
+        section.contact__form
+            form.contact__layout#contact-form(action="#")
+
+                .contact__layout--item
+                    input.contact__textbox(type="text" placeholder="Name")
+                .contact__layout--item
+                    input.contact__textbox(type="text" placeholder="Email")
+                .contact__layout--item
+                    input.contact__textbox(type="text" placeholder="Subject")
+                .contact__layout--item
+                    .contact__link
+                        a(href="mailto:info@watchdogmedia.co.za") info@watchdogmedia.co.za
+            
+                textarea.contact__textarea(placeholder="Message:" rows="10")

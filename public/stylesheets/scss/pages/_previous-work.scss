@@ -1,0 +1,89 @@
+.previous {
+    &__banner {
+        position: relative;
+        height: 35vh;
+        padding: 3rem 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to right, transparent, transparent),
+            url(../../../images/4x/background-1-4x.png);
+        background-size: cover;
+
+        &--title {
+            font-size: 4rem !important;
+            font-family: $font-noteworthy;
+            color: $color-white;
+        }
+
+        &--divider {
+            margin: 2.4rem 0rem;
+            width: 65%;
+            border-top: 10px solid white;
+        }
+
+        &--text {
+            font-size: 2.5rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+    }
+
+    &__work {
+        padding: 7rem 0rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &--item {
+            flex: 1 0 calc(20% - 1.5rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--image {
+            margin: 1.5rem;
+            min-height: 12rem !important;
+            min-width: 16rem !important;
+            background-color: rgba($color: #d9e026ff, $alpha: 1);
+        }
+
+        &--title {
+            font-size: 1.8rem !important;
+            font-family: $font-noteworthy;
+        }
+    }
+
+    &__press {
+        min-height: 40rem;
+        background-color: rgba(#383838, $alpha: 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--title {
+            font-size: 4rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+
+        &--list {
+            display: block;
+            width: 70;
+            list-style-type: decimal;
+        }
+
+        &--list-item {
+            font-size: 2.6rem;
+            font-family: $font-noteworthy;
+            color: $color-yellow;
+        }
+    }
+}

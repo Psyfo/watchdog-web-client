@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
 @font-face {
   font-family: noteworthy;
   src: url(../fonts/noteworthy-bold.ttf);
@@ -8,6 +22,33 @@
   font-family: minion;
   src: url(../fonts/minion-pro-regular.ttf);
 }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
   font-family: "minion", "sans-serif";
 }
@@ -39,30 +80,85 @@ body {
   min-height: 40vh;
 }
 
+.feature {
+  padding: 0rem 2rem;
+  display: flex;
+  flex-basis: 33%;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.feature__icon {
+  height: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.feature__title {
+  font-size: 2rem !important;
+  font-family: "noteworthy", "sans-serif";
+  font-weight: bold;
+  line-height: 3rem;
+}
+.feature__content {
+  min-height: 14rem;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
 .footer {
-  padding: 4rem 3rem;
+  padding: 5rem 3rem;
+}
+.footer__item {
+  font-size: 2.3rem !important;
+  font-family: "noteworthy", "sans-serif";
 }
 
 .nav-item.active {
   border-bottom: 2px dot black;
 }
 
-.section__home--banner {
+.nav-link,
+.dropdown-item {
+  margin: 1rem 1rem;
+  font-size: 2.2rem;
+  font-family: "noteworthy", "sans-serif";
+}
+
+.navbar-brand {
+  font-size: 2.2rem;
+}
+
+.home__banner {
+  position: relative;
   height: 50vh;
   background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
   background-size: cover;
 }
-.section__home--content {
-  padding: 5rem 3rem;
+.home__banner--logo {
+  height: 25rem;
+  position: absolute;
+  bottom: 6rem;
+  z-index: 1000;
 }
-.section__home--features {
-  padding: 2rem 4rem 3rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.home__banner--text {
+  font-size: 3rem;
+  color: #ffffff !important;
+  font-family: "noteworthy", "sans-serif";
+  position: absolute;
+  bottom: 3rem;
+  right: 10rem;
 }
-
-.divider {
+.home__welcome {
+  padding: 5rem 8rem;
+}
+.home__welcome--title {
+  font-size: 3rem;
+  font-family: "noteworthy", "sans-serif";
+}
+.home__welcome--divider {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
@@ -70,25 +166,54 @@ body {
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
+.home__welcome--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+}
+.home__features {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-basis: 33%;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-.section__about--banner {
+.about__banner {
+  height: 35vh;
   padding: 3rem 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 40vh;
   background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
   background-size: cover;
 }
-.section__about--features {
-  padding: 4rem 2rem;
+.about__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+}
+.about__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.about__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.about__features {
+  padding: 3rem 2rem;
   display: flex;
+  flex-basis: 33%;
+  flex-grow: 1;
   flex-direction: row;
   justify-content: space-between;
 }
-.section__about--philosophies {
+.about__philosophies {
   height: 50vh;
   padding: 4rem 2rem;
   display: flex;
@@ -97,38 +222,29 @@ body {
   background-color: black;
 }
 
-.divider--2 {
-  margin: 24px 0px;
-  width: 65%;
-  border-top: 10px solid white;
+.philosophy {
+  padding: 4rem;
 }
-
-.feature {
-  flex-grow: 1;
-  flex-basis: 33.33%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-.feature__icon {
-  margin-top: 3px;
-  margin-bottom: 3px;
-}
-.feature__content {
-  font-size: 1.4rem;
-}
-
 .philosophy__statement {
+  padding: 2rem;
   flex-grow: 1;
   flex-basis: 33.33%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.philosophy__statement--text {
-  font-size: 1.2rem;
+.philosophy__statement--title {
+  font-size: 3.8rem;
+  font-family: "noteworthy", "sans-serif";
+  text-align: center;
   color: #ffffff !important;
+}
+.philosophy__statement--text {
+  font-size: 2.2rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+  letter-spacing: 0.2rem;
+  font-weight: lighter;
 }
 .philosophy__slogan {
   flex-grow: 2;
@@ -138,13 +254,230 @@ body {
   align-items: center;
   font-family: "minion", "sans-serif";
 }
+.philosophy__slogan--image {
+  display: flex;
+  justify-content: center;
+}
 .philosophy__slogan--text {
+  font-size: 3rem;
   font-family: "noteworthy", "sans-serif";
   color: #d9e026ff !important;
 }
 .philosophy__slogan--divider {
   height: 60%;
   border-left: 10px solid #d9e026ff !important;
+}
+
+.people__banner {
+  height: 35vh;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.people__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+}
+.people__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.people__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.people__content {
+  padding: 2rem 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.people__reel {
+  height: 35vh;
+  flex-basis: 100%;
+  flex-grow: 1;
+  margin: 0;
+  width: 100%;
+  padding: 7rem 3rem;
+  background: linear-gradient(to right, transparent, transparent), url(../../../images/custom/reel_border.svg);
+  background-size: cover;
+  background-repeat: no-repeat !important;
+}
+.people__reel--content {
+  flex-grow: 1;
+  height: inherit;
+  background: linear-gradient(to right, transparent, transparent), url(../../../images/custom/splat_yellow.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+.people__reel--title {
+  width: 60%;
+  height: 50%;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/custom/splat_black.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 3.8rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+
+.contact__banner {
+  position: relative;
+  height: 35vh;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.contact__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+}
+.contact__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.contact__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.contact__layout {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.contact__layout--item {
+  flex: 1 0 45%;
+}
+.contact__textbox {
+  margin: 3rem 0rem;
+  padding: 0.5rem 0.8rem;
+  width: 90%;
+  display: block;
+  font-size: 2.5rem;
+  font-family: "noteworthy", "sans-serif";
+  color: navy !important;
+  border: 0.3rem solid navy;
+  background-color: #d9e026ff !important;
+}
+.contact__textbox::placeholder {
+  font-size: 2rem;
+  font-family: "noteworthy", "sans-serif";
+  color: navy !important;
+}
+.contact__textarea {
+  margin: 3rem 0rem;
+  padding: 0.5rem 0.8rem;
+  width: 100%;
+  display: block;
+  font-size: 2.5rem;
+  font-family: "noteworthy", "sans-serif";
+  color: navy !important;
+  border: 0.3rem solid navy;
+  background-color: #d9e026ff !important;
+}
+.contact__textarea::placeholder {
+  font-size: 2rem;
+  font-family: "noteworthy", "sans-serif";
+  color: navy !important;
+}
+.contact__link {
+  font-size: 2.6rem !important;
+  vertical-align: middle;
+}
+
+.previous__banner {
+  position: relative;
+  height: 35vh;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.previous__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+}
+.previous__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.previous__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.previous__work {
+  padding: 7rem 0rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.previous__work--item {
+  flex: 1 0 calc(20% - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.previous__work--image {
+  margin: 1.5rem;
+  min-height: 12rem !important;
+  min-width: 16rem !important;
+  background-color: #d9e026;
+}
+.previous__work--title {
+  font-size: 1.8rem !important;
+  font-family: "noteworthy", "sans-serif";
+}
+.previous__press {
+  min-height: 40rem;
+  background-color: #383838;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.previous__press--title {
+  font-size: 4rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.previous__press--list {
+  display: block;
+  width: 70;
+  list-style-type: decimal;
+}
+.previous__press--list-item {
+  font-size: 2.6rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #d9e026ff !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
