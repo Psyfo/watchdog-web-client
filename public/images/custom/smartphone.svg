@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg6112"
+   version="1.1"
+   viewBox="0 0 8.7312501 11.112501"
+   height="11.1125mm"
+   width="8.7312498mm">
+  <defs
+     id="defs6106">
+    <clipPath
+       id="SVGID_22_">
+      <use
+         id="use236"
+         overflow="visible"
+         xlink:href="#SVGID_21_"
+         style="overflow:visible"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </clipPath>
+    <rect
+       height="28.75"
+       width="22.5"
+       y="-505.01001"
+       x="528.70502"
+       id="SVGID_21_" />
+  </defs>
+  <metadata
+     id="metadata6109">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-116.66039,-205.60874)"
+     id="layer1">
+    <g
+       id="g246"
+       transform="matrix(0.3175,0,0,0.3175,-52.01529,117.73268)">
+      <g
+         transform="translate(5.0569951,784.28532)"
+         id="g15503">
+        <g
+           id="g15505" />
+        <g
+           id="g15511">
+          <g
+             id="g241">
+            <defs
+               id="defs234">
+              <rect
+                 height="28.75"
+                 width="22.5"
+                 y="-505.01001"
+                 x="528.70502"
+                 id="rect6959" />
+            </defs>
+            <clipPath
+               id="clipPath6928">
+              <use
+                 id="use6926"
+                 overflow="visible"
+                 xlink:href="#SVGID_21_"
+                 style="overflow:visible"
+                 x="0"
+                 y="0"
+                 width="100%"
+                 height="100%" />
+            </clipPath>
+            <g
+               clip-path="url(#SVGID_22_)"
+               id="g15513"
+               style="opacity:0.25">
+              <path
+                 d="m 551.205,-476.26 h -22.5 v -28.75 h 22.5 z"
+                 id="path15515" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <path
+         d="m 555.012,306.775 h -20 v -26.25 h 20 z m -10,3.75 c -0.689,0 -1.25,-0.559 -1.25,-1.25 0,-0.691 0.561,-1.25 1.25,-1.25 0.691,0 1.25,0.559 1.25,1.25 0,0.691 -0.559,1.25 -1.25,1.25 m 10,-33.75 h -20 c -2.061,0 -3.75,1.688 -3.75,3.75 v 27.5 c 0,2.062 1.689,3.75 3.75,3.75 h 20 c 2.064,0 3.75,-1.688 3.75,-3.75 v -27.5 c 0,-2.063 -1.686,-3.75 -3.75,-3.75"
+         id="path15517"
+         style="fill:#e4248f" />
+    </g>
+  </g>
+</svg>

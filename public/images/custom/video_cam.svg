@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg6254"
+   version="1.1"
+   viewBox="0 0 20.248405 14.342622"
+   height="14.342622mm"
+   width="20.248407mm">
+  <defs
+     id="defs6248">
+    <clipPath
+       id="SVGID_22_">
+      <use
+         id="use418"
+         overflow="visible"
+         xlink:href="#SVGID_21_"
+         style="overflow:visible"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </clipPath>
+    <clipPath
+       id="SVGID_24_">
+      <use
+         id="use432"
+         overflow="visible"
+         xlink:href="#SVGID_23_"
+         style="overflow:visible"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </clipPath>
+    <rect
+       height="17.5"
+       width="15"
+       y="-508.53699"
+       x="106.239"
+       id="SVGID_21_" />
+    <rect
+       height="5"
+       width="15"
+       y="-493.53601"
+       x="106.239"
+       id="SVGID_23_" />
+    <clipPath
+       id="SVGID_26_">
+      <use
+         id="use531"
+         overflow="visible"
+         xlink:href="#SVGID_25_"
+         style="overflow:visible"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </clipPath>
+    <rect
+       height="6.25"
+       width="11.25"
+       y="-350.70901"
+       x="104.049"
+       id="SVGID_25_" />
+  </defs>
+  <metadata
+     id="metadata6251">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-84.533769,-114.3562)"
+     id="layer1">
+    <g
+       id="g594"
+       transform="matrix(0.67494689,0,0,0.67494689,-96.67853,-184.61206)">
+      <g
+         transform="translate(223.94479,364.5338)"
+         id="g3826">
+        <path
+           d="m 67.039,87.167 v 3.75 l 7.5,6.25 v -16.25 z"
+           id="path3828"
+           style="fill:#010101" />
+      </g>
+      <g
+         transform="translate(222.94479,358.5338)"
+         id="g3830">
+        <path
+           d="m 66.789,100.667 c 0,2.761 -2.239,5 -5,5 h -11.25 c -2.762,0 -5,-2.239 -5,-5 v -11.25 c 0,-2.762 2.239,-5 5,-5 h 11.25 c 2.761,0 5,2.238 5,5 z"
+           id="path3832"
+           style="fill:#010101" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -2,4 +2,60 @@ extends layout
 
 block content
     .container
-        section.section__services--1
+        section.services__banner
+                .services__banner--title SERVICES
+                .services__banner--divider
+                .services__banner--text Survive. Stay Relevant.
+                .services-menu
+                    a.services-menu__link(href="/services-video") Video Production Services
+                    a.services-menu__link(href="/services-event") Event Videography
+                    a.services-menu__link(href="/services-corporate") Corporate/Training Videos
+                    a.services-menu__link(href="/services-social") Social Media
+        
+        section.services__features
+            .feature-2
+                .feature-2__icon 
+                    img(src="images/custom/clapperboard_pink.svg", alt="clapperboard")
+                .feature-2__title Video Production Services
+                .feature-2__content Creating fiction and non-fiction video content for consumer consumption
+                a.button(href="/services-video") Click Here
+
+            .feature-2
+                .feature-2__icon
+                    img(src="images/custom/camcorder.svg", alt="camcorder")
+                .feature-2__title Event Videography
+                .feature-2__content Video coverage of an event
+                a.button(href="/services") Click Here
+
+            .feature-2
+                .feature-2__icon
+                    img(src="images/custom/corporate_card.svg", alt="corporate card")
+                .feature-2__title Corporate/Training Videos
+                .feature-2__content Merging education and entertainment into 3-5 minutes short films to assist employees and clients to know and learn about the company and its systems
+                a.button(href="/services") Click Here
+
+            .feature-2
+                .feature-2__icon
+                    img(src="images/custom/smartphone.svg", alt="smartphone")
+                .feature-2__title Social Media
+                .feature-2__content Developing and managing different social media platforms
+                a.button(href="/services") Click Here
+        
+        section.services__services
+            .services__container
+                .services__production 
+                    .production__title
+                        .production__title--text Video Production 
+                            span.text-yellow Services
+                        img.production__title--icon(src="images/custom/clapperboard_yellow.svg", alt="Clapperboard")
+                    .production__splat
+                        .production__splat--text Whether an expert filmmaker, or a person who has no idea on how to create a video, Watchdog Media will provide you with the key production elements to make your production a reality.
+                    
+                .services__checklist
+                    .checklist__title Checklist
+                    .checklist__item
+                        img.checklist__item--icon(src="images/custom/tick.svg" alt="tick")
+                        .checklist__item--text Filmaker
+                    .checklist__item
+                        img.checklist__item--icon(src="images/custom/tick.svg" alt="tick")
+                        .checklist__item--text Non Filmmaker

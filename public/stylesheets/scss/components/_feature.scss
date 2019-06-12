@@ -28,3 +28,70 @@
         text-align: center;
     }
 }
+
+.feature-2 {
+    padding: 0rem 2rem;
+    display: flex;
+    flex-basis: 22%;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__icon {
+        height: 14rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: 1.6rem !important;
+        font-family: $font-noteworthy;
+        font-weight: bold;
+        line-height: 3rem;
+    }
+
+    &__content {
+        min-height: 14rem;
+        font-size: 1.5rem;
+    }
+}
+
+.feature-3 {
+    flex-grow: 1;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 1rem;
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 12rem;
+        width: 9rem;
+        background-color: $color-yellow;
+        border-radius: 50%;
+    }
+    &__image {
+        max-height: 7rem;
+        max-width: 6rem;
+    }
+    &__title {
+        margin-top: 0.3rem;
+        font-size: 2.1rem;
+        font-family: $font-noteworthy;
+        color: $color-black;
+        line-height: 3rem;
+        text-align: center;
+    }
+    &__text {
+        margin-top: 0.3rem;
+        font-size: 1.9rem;
+        font-family: $font-minion;
+        color: black;
+        text-align: center;
+    }
+}

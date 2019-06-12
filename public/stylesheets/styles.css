@@ -80,6 +80,28 @@ body {
   min-height: 40vh;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../images/custom/splat_pink.svg) top left;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 12rem;
+  height: 5rem;
+  font-size: 1.3rem;
+  font-family: "noteworthy", "sans-serif";
+  line-height: 1.4rem;
+  color: #000000 !important;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+}
+.button:hover {
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
 .feature {
   padding: 0rem 2rem;
   display: flex;
@@ -105,6 +127,70 @@ body {
 .feature__content {
   min-height: 14rem;
   font-size: 2.4rem;
+  text-align: center;
+}
+
+.feature-2 {
+  padding: 0rem 2rem;
+  display: flex;
+  flex-basis: 22%;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.feature-2__icon {
+  height: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.feature-2__title {
+  font-size: 1.6rem !important;
+  font-family: "noteworthy", "sans-serif";
+  font-weight: bold;
+  line-height: 3rem;
+}
+.feature-2__content {
+  min-height: 14rem;
+  font-size: 1.5rem;
+}
+
+.feature-3 {
+  flex-grow: 1;
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 1rem;
+}
+.feature-3__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  width: 9rem;
+  background-color: #d9e026ff !important;
+  border-radius: 50%;
+}
+.feature-3__image {
+  max-height: 7rem;
+  max-width: 6rem;
+}
+.feature-3__title {
+  margin-top: 0.3rem;
+  font-size: 2.1rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #000000 !important;
+  line-height: 3rem;
+  text-align: center;
+}
+.feature-3__text {
+  margin-top: 0.3rem;
+  font-size: 1.9rem;
+  font-family: "minion", "sans-serif";
+  color: black;
   text-align: center;
 }
 
@@ -268,6 +354,203 @@ body {
   border-left: 10px solid #d9e026ff !important;
 }
 
+.services__banner {
+  position: relative;
+  height: 35vh;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.services__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+}
+.services__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.services__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.services__container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-image: url(../../../images/custom/splat_black_3.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.services__checklist {
+  flex: 1 0 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.services__production {
+  position: relative;
+  flex: 1 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(10rem);
+}
+.services__features {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.services__services {
+  padding: 12rem 4rem;
+  height: 55vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.checklist__title {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #d9e026ff !important;
+  align-self: center;
+  border-bottom: 0.8rem solid white !important;
+}
+.checklist__item {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+.checklist__item--icon {
+  height: 4rem !important;
+  margin: 0rem 1rem;
+}
+.checklist__item--text {
+  font-size: 2.8rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #d9e026ff !important;
+}
+
+.production {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 3rem;
+}
+.production__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.production__title--text {
+  font-size: 3.9rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+  margin-right: 3rem;
+}
+.production__title--icon {
+  height: 6.5rem;
+}
+.production__splat {
+  margin-top: 5rem;
+  height: 75%;
+  width: 90%;
+  background-image: url(../../../images/custom/splat_yellow_2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.production__splat--text {
+  padding: 3rem;
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #000000 !important;
+}
+
+.services-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-5rem, -2.5rem);
+  width: 26rem;
+  background-image: url(../../../images/custom/services-menu.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.services-menu__link {
+  padding: 0.1rem 0.3rem;
+  font-size: 1.6rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #000000 !important;
+  cursor: pointer;
+}
+.services-menu__link:link,
+.services-menu__link :visited,
+.services-menu__link :hover {
+  text-decoration: none;
+}
+.services-menu__link:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s linear;
+}
+
+.services-video__banner {
+  position: relative;
+  height: 35vh;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.services-video__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff !important;
+}
+.services-video__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.services-video__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff !important;
+}
+.services-video__services {
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.people {
+  position: relative;
+}
 .people__banner {
   height: 35vh;
   padding: 3rem 6rem;
@@ -295,41 +578,123 @@ body {
   color: #ffffff !important;
 }
 .people__content {
-  padding: 2rem 8rem;
+  padding: 2rem 11rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .people__reel {
-  height: 35vh;
-  flex-basis: 100%;
-  flex-grow: 1;
-  margin: 0;
+  position: relative;
+  padding: 1.1rem;
   width: 100%;
-  padding: 7rem 3rem;
-  background: linear-gradient(to right, transparent, transparent), url(../../../images/custom/reel_border.svg);
-  background-size: cover;
-  background-repeat: no-repeat !important;
+  height: 40vh;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #000000 !important;
+  border-width: 10px 4px 10px 4px;
+  border-style: dashed solid dashed solid;
+  border-image-repeat: stretch;
 }
-.people__reel--content {
+.people__reel--title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.people__reel--title .clapperboard {
+  width: 3.5rem;
+  margin-right: 4rem;
+}
+.people__reel--title .divider-pipe {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "minion", "sans-serif";
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.people__reel--title .text {
+  font-size: 3.5rem;
+  color: #000000 !important;
+  font-family: "noteworthy", "sans-serif";
+}
+.people__reel--row {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+}
+.people__reel--row .director-image {
+  width: 40%;
+}
+
+.splat__yellow {
+  position: relative;
   flex-grow: 1;
   height: inherit;
   background: linear-gradient(to right, transparent, transparent), url(../../../images/custom/splat_yellow.svg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-.people__reel--title {
-  width: 60%;
-  height: 50%;
-  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/custom/splat_black.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  font-size: 3.8rem;
+
+.splat__black--1 {
+  position: relative;
+  height: 48%;
+  width: 45%;
+  background-image: url(../../../images/custom/splat_black.svg);
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.splat__black--2 {
+  width: 50%;
+  height: 90%;
+  position: relative;
+  background-image: url(../../../images/custom/splat_black_2.svg);
+  background-size: cover;
+  margin-bottom: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+.splat__black--2 .text {
+  padding: 2rem;
+  font-size: 1.5rem;
   font-family: "minion", "sans-serif";
   color: #ffffff !important;
+}
+.splat__black--title {
+  font-size: 4rem;
+  color: #ffffff !important;
+  font-family: "noteworthy", "sans-serif";
+}
+
+.splat__pink {
+  margin-left: 5rem;
+  background-image: url(../../../images/custom/splat_pink.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #000000 !important;
+}
+.splat__pink--link {
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #000000 !important;
 }
 
 .contact__banner {
