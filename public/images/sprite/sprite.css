@@ -1,0 +1,46 @@
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(sprite.svg);
+}
+.icon-checkmark {
+  width: 20px;
+  height: 20px;
+  background-position: 0 0;
+}
+.icon-checkmark-outline {
+  width: 20px;
+  height: 20px;
+  background-position: -36px 0;
+}
+.icon-cheveron-down {
+  width: 20px;
+  height: 20px;
+  background-position: -72px 0;
+}
+.icon-cheveron-left {
+  width: 20px;
+  height: 20px;
+  background-position: -108px 0;
+}
+.icon-cheveron-outline-down {
+  width: 20px;
+  height: 20px;
+  background-position: -144px 0;
+}
+.icon-cheveron-outline-left {
+  width: 20px;
+  height: 20px;
+  background-position: -180px 0;
+}
+.icon-cheveron-outline-right {
+  width: 20px;
+  height: 20px;
+  background-position: -216px 0;
+}
+.icon-cheveron-outline-up {
+  width: 20px;
+  height: 20px;
+  background-position: -252px 0;
+}
+

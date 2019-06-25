@@ -17,11 +17,62 @@
     position: relative;
 }
 
-.services-menu {
+.navigation {
+    width: 100%;
+    height: 6rem;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 30% repeat(6, minmax(max-content, auto));
+    align-items: center;
+    transition: all 0.3s linear;
+
+    &__item {
+        position: relative;
+        display: grid;
+    }
+    &__item--droppable {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: min-content auto;
+        align-items: center;
+    }
+    &__link {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        &:link,
+        &:visited {
+            text-decoration: none;
+            font-size: 2rem;
+            font-family: $font-noteworthy;
+            color: darkslategrey;
+            cursor: pointer;
+        }
+        &:hover {
+            transform: scale(1.1);
+            transition: all 0.3s linear;
+        }
+    }
+    &__icon {
+        grid-row: 1/2;
+        grid-column: 2/3;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        background-image: url(../../../images/SVG/cheveron-down.svg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.services__menu {
     position: absolute;
-    bottom: 0;
+    top: 4rem;
     left: 0;
-    transform: translate(-5rem, -2.5rem);
+    transform: translate(50rem, -50%) scale(0);
+    transform-origin: top left;
+    transition: all 0.3s linear;
     width: 26rem;
     background-image: url(../../../images/custom/services-menu.svg);
     background-size: 100% 100%;
@@ -31,21 +82,40 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 10000;
 
-    &__link {
+    &--link {
         padding: 0.1rem 0.3rem;
         font-size: 1.6rem;
         font-family: $font-noteworthy;
         color: $color-black;
         cursor: pointer;
         &:link,
-        :visited,
-        :hover {
+        &:visited,
+        &:hover {
             text-decoration: none;
+            color: $color-black;
         }
         &:hover {
             transform: scale(1.1);
-            transition: transform 0.3s linear;
+            transition: all 0.3s linear;
         }
     }
+}
+.services__toggler {
+    position: absolute;
+    top: -9999;
+    left: -9999;
+    display: none;
+}
+.services__label {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: $font-noteworthy;
+    color: darkslategrey;
+    cursor: pointer;
+}
+.services__toggler:checked ~ .services__menu {
+    transform: scale(1);
+    transition: all 0.3s linear;
 }
