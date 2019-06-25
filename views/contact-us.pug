@@ -12,12 +12,20 @@ block content
 
                 .contact__layout--item
                     input.contact__textbox(type="text" placeholder="Name")
-                .contact__layout--item
-                    input.contact__textbox(type="text" placeholder="Email")
+                //- .contact__layout--item
+                //-     input.contact__textbox(type="text" placeholder="Email")
+                .contact__layout--item.mt-4
+                    
+                    .contact__link
+                        img.contact__icon.mr-2(src="images/custom/envelope_pink.svg", alt="mail")
+                        a(href="mailto:info@watchdogmedia.co.za") Information: info@watchdogmedia.co.za
+                    .contact__link
+                        img.contact__icon.mr-2(src="images/custom/envelope_pink.svg", alt="mail")
+                        a(href="mailto:sos@watchdogmedia.co.za") Emergencies: sos@watchdogmedia.co.za
                 .contact__layout--item
                     input.contact__textbox(type="text" placeholder="Subject")
-                .contact__layout--item
-                    .contact__link
-                        a(href="mailto:info@watchdogmedia.co.za") info@watchdogmedia.co.za
+                
             
                 textarea.contact__textarea(placeholder="Message:" rows="10")
+
+                button.button(type="submit") Send

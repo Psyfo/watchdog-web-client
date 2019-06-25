@@ -142,36 +142,3 @@
         }
     }
 }
-
-.services-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-5rem, -2.5rem);
-    width: 26rem;
-    background-image: url(../../../images/custom/services-menu.svg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 1.2rem 1.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    &__link {
-        padding: 0.1rem 0.3rem;
-        font-size: 1.6rem;
-        font-family: $font-noteworthy;
-        color: $color-black;
-        cursor: pointer;
-        &:link,
-        :visited,
-        :hover {
-            text-decoration: none;
-        }
-        &:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s linear;
-        }
-    }
-}

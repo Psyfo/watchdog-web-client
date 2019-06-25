@@ -1,0 +1,174 @@
+.palesa {
+    position: relative;
+    &__banner {
+        height: 35vh;
+        padding: 3rem 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to right, transparent, transparent),
+            url(../../../images/4x/background-1-4x.png);
+        background-size: cover;
+
+        &--title {
+            font-size: 4rem !important;
+            font-family: $font-noteworthy;
+            color: $color-white;
+        }
+
+        &--divider {
+            margin: 2.4rem 0rem;
+            width: 65%;
+            border-top: 10px solid white;
+        }
+
+        &--text {
+            font-size: 2.5rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+    }
+
+    &__content {
+        padding: 2rem 11rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.reel-3 {
+    position: relative;
+    width: 80rem;
+    height: 91.55rem;
+    background-image: url(../../../images/custom/reel_border_3.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template-rows: 5% 18% auto 5%;
+    grid-template-columns: 5% auto 5%;
+    align-items: center;
+
+    &__header {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../../images/custom/splat_yellow_3.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: grid;
+        grid-template-rows: 5% repeat(2, 45%) 5%;
+        grid-template-columns: auto 45% auto;
+
+        &--title {
+            grid-row: 2/3;
+            grid-column: 2/3;
+            width: 100%;
+            height: 100%;
+            padding-top: 1.4rem;
+            background-image: url(../../../images/custom/splat_black_4.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.6rem;
+            font-family: $font-noteworthy;
+            color: $color-white;
+        }
+        &--pane {
+            grid-row: 3/4;
+            grid-column: 2/3;
+            display: grid;
+            grid-template-rows: 5% auto 5%;
+            grid-template-columns: auto repeat(max-content);
+            align-items: center;
+            align-content: center;
+        }
+        &--pane-icon {
+            grid-row: 2/3;
+            grid-column: 1/2;
+            height: 80%;
+        }
+        &--pane-text-1 {
+            grid-row: 2/3;
+            grid-column: 2/3;
+            font-size: 2.6rem;
+            font-family: $font-noteworthy;
+            color: $color-black;
+        }
+        &--pane-text-2 {
+            grid-row: 2/3;
+            grid-column: 4/5;
+            font-size: 2.6rem;
+            font-family: $font-noteworthy;
+            color: $color-black;
+        }
+        &--pane-divider {
+            grid-row: 2/3;
+            grid-column: 3/4;
+            border-left: 0.5rem solid black;
+            height: 100%;
+            width: 0;
+            padding: 0;
+        }
+    }
+    &__content {
+        grid-row: 3/4;
+        grid-column: 2/3;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../../images/custom/splat_black_5.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-rows: 5% repeat(max-content) 5%;
+        grid-template-columns: 5% auto 5%;
+
+        &--text-1 {
+            grid-row: 2/3;
+            grid-column: 2/3;
+            font-size: 1.6rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+        &--text-2 {
+            grid-row: 3/4;
+            grid-column: 2/3;
+            font-size: 1.6rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+        &--text-3 {
+            grid-row: 4/5;
+            grid-column: 2/3;
+            font-size: 1.6rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+        &--text-4 {
+            grid-row: 5/6;
+            grid-column: 2/3;
+            font-size: 1.6rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+        &--text-5 {
+            grid-row: 6/7;
+            grid-column: 2/3;
+            font-size: 1.6rem;
+            font-family: $font-minion;
+            color: $color-white;
+        }
+    }
+}

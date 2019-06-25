@@ -48,6 +48,12 @@ router.get('/people', (req, res, next) => {
     });
 });
 
+router.get('/palesa', (req, res, next) => {
+    res.render('palesa', {
+        title: 'Palesa',
+    });
+});
+
 router.get('/contact-us', (req, res, next) => {
     res.render('contact-us', {
         title: 'Contact Us',
