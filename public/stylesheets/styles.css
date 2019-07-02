@@ -113,6 +113,10 @@ body {
   color: #d9e026ff;
 }
 
+.text-grey-light {
+  color: #999;
+}
+
 .jumbotron {
   background: url("../images/background3.jpg") no-repeat center center;
   background-size: cover;
@@ -311,6 +315,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
+  transform: translateY(0.5rem);
 }
 
 .services__menu {
@@ -360,10 +365,12 @@ body {
   font-family: "noteworthy", "sans-serif";
   color: darkslategrey;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 
 .services__toggler:checked ~ .services__menu {
   transform: scale(1);
+  transform-origin: top left;
   transition: all 0.3s linear;
 }
 
@@ -801,6 +808,217 @@ body {
   color: #333;
   text-align: center;
   padding: 0 1.5rem;
+}
+
+.services-corporate__banner {
+  position: relative;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.services-corporate__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff;
+}
+.services-corporate__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.services-corporate__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff;
+}
+.services-corporate__content {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 10rem 10rem 20vh 506.5px;
+  grid-row-gap: 2rem;
+  grid-template-columns: [main-start] 5% [content-start] auto [content-end] 5% [main-end];
+}
+.services-corporate__title {
+  grid-row: 1/2;
+  grid-column: content-start/content-end;
+  display: grid;
+  grid-template-columns: 10% auto;
+  grid-template-rows: auto;
+  align-items: center;
+}
+.services-corporate__title--icon {
+  grid-column: 1/2;
+  height: 4.2rem;
+}
+.services-corporate__title--text {
+  grid-column: 2/3;
+  font-size: 3.5rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #000000;
+  letter-spacing: 0.2rem;
+}
+.services-corporate__description {
+  grid-row: 2/3;
+  grid-column: content-start/content-end;
+  font-size: 2rem;
+  font-family: "minion", "sans-serif";
+  font-weight: light;
+  color: #000000;
+  letter-spacing: 0.08rem;
+}
+.services-corporate__features {
+  grid-column: content-start/content-end;
+  grid-row: 3/4;
+  display: grid;
+  grid-auto-columns: repeat(5, auto);
+  grid-column-gap: 1rem;
+  align-items: center;
+}
+.services-corporate__features--divider {
+  grid-row: 1/2;
+  height: 85%;
+  border-left: 1rem solid #ec008cff;
+}
+.services-corporate__feature {
+  grid-row: 1/2;
+  height: 100%;
+  display: grid;
+  min-width: 30%;
+  grid-template-columns: 15% auto;
+  grid-template-rows: 30% auto;
+}
+.services-corporate__feature--icon {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  max-height: 3.5rem;
+  max-width: 3.5rem;
+}
+.services-corporate__feature--title {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-size: 2rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #ec008cff;
+  letter-spacing: 0.05rem;
+}
+.services-corporate__feature--description {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  font-size: 1.7rem;
+  font-family: "minion", "sans-serif";
+  color: #000000;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  font-weight: 200;
+}
+.services-corporate__checklist {
+  grid-column: content-start/content-end;
+  grid-row: 4/5;
+  width: 100%;
+  background-image: url(../../../images/custom/splat_black_6.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 10% auto 30%;
+  grid-column-gap: 1rem;
+}
+.services-corporate__checklist--image {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  width: 100%;
+  background-image: url(../../../images/custom/splat_yellow_4.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.services-corporate__checklist--list {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 15% auto;
+  grid-auto-rows: max-content;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.services-corporate__checklist--heading {
+  grid-column: 2/3;
+  font-size: 2.5rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #d9e026ff;
+}
+.services-corporate__checklist--divider {
+  grid-column: 2/3;
+  width: 80%;
+  border-bottom: 0.5rem solid #ffffff;
+}
+.services-corporate__checklist--icon {
+  grid-column: 1/2;
+  background-image: url(../../../images/custom/tick.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.services-corporate__checklist--text {
+  grid-column: 2/3;
+  font-size: 2.5rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #d9e026ff;
+}
+
+.services-social__banner {
+  position: relative;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
+  background-size: cover;
+}
+.services-social__banner--title {
+  font-size: 4rem !important;
+  font-family: "noteworthy", "sans-serif";
+  color: #ffffff;
+}
+.services-social__banner--divider {
+  margin: 2.4rem 0rem;
+  width: 65%;
+  border-top: 10px solid white;
+}
+.services-social__banner--text {
+  font-size: 2.5rem;
+  font-family: "minion", "sans-serif";
+  color: #ffffff;
+}
+.services-social__content {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 15rem auto auto auto;
+  grid-row-gap: 2rem;
+  grid-template-columns: [main-start] 5% [content-start] auto [content-end] 5% [main-end];
+}
+.services-social__title {
+  font-size: 3rem;
+  font-family: "noteworthy", "sans-serif";
+  color: #000000;
+  letter-spacing: 0.1rem;
+}
+
+.social-collage {
+  grid-column: content-start/content-end;
+  grid-row: 1/2;
+  height: 100%;
+  background-image: url(../../../images/custom/social_media.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: center;
 }
 
 .people {

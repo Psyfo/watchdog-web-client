@@ -1,3 +1,5 @@
+import anime from 'animejs';
+
 $(document).ready(function() {});
 // Service dropdown
 $(function() {
@@ -29,4 +31,14 @@ $(function() {
     $('#services-menu,label').on('click', function(e) {
         e.stopPropagation();
     });
+});
+
+$(document).ready(function() {
+    var servicesMenu = () => {
+        anime({
+            targets: '.services__menu',
+            duration: 300,
+        });
+    };
+    servicesMenu();
 });
