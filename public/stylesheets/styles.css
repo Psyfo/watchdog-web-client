@@ -203,30 +203,102 @@ body {
   }
 }
 .feature-2 {
-  padding: 0rem 2rem;
   display: flex;
-  flex-basis: 22%;
-  flex-grow: 1;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
+@media only screen and (min-width: 30em) {
+  .feature-2 {
+    padding: 0 5%;
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .feature-2 {
+    padding: 0 10%;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .feature-2 {
+    width: 50%;
+    padding: 0 5%;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .feature-2 {
+    width: 24%;
+    padding: 0;
+  }
+}
 .feature-2__icon {
-  height: 14rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+}
+@media only screen and (min-width: 30em) {
+  .feature-2__icon {
+    height: 7rem;
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .feature-2__icon {
+    height: 8.5rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .feature-2__icon {
+    height: 7rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .feature-2__icon {
+    height: 5rem;
+  }
 }
 .feature-2__title {
-  font-size: 1.6rem !important;
   font-family: "noteworthy", "sans-serif";
   font-weight: bold;
-  line-height: 3rem;
+  letter-spacing: 0.05rem;
+  line-height: 1;
+}
+@media only screen and (min-width: 30em) {
+  .feature-2__title {
+    font-size: 2.3rem;
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .feature-2__title {
+    font-size: 2.3rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .feature-2__title {
+    font-size: 1.8rem;
+  }
 }
 .feature-2__content {
-  min-height: 14rem;
-  font-size: 1.5rem;
+  font-family: "minion", "sans-serif";
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+@media only screen and (min-width: 30em) {
+  .feature-2__content {
+    font-size: 2.2rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .feature-2__content {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .feature-2__content {
+    font-size: 1.9rem;
+  }
 }
 
 .feature-3 {
@@ -902,9 +974,7 @@ body {
   }
 }
 .services__banner {
-  position: relative;
   height: 35vh;
-  padding: 3rem 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -913,119 +983,311 @@ body {
   background-image: linear-gradient(to right, transparent, transparent), url(../../../images/4x/background-1-4x.png);
   background-size: cover;
 }
+@media only screen and (min-width: 30em) {
+  .services__banner {
+    padding: 3rem 2rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .services__banner {
+    padding: 3rem 4rem;
+  }
+}
 .services__banner--title {
-  font-size: 4rem !important;
   font-family: "noteworthy", "sans-serif";
+  letter-spacing: 0.05rem;
+  line-height: 1;
   color: #ffffff;
+}
+@media only screen and (min-width: 30em) {
+  .services__banner--title {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .services__banner--title {
+    font-size: 2.8rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .services__banner--title {
+    font-size: 3rem;
+  }
 }
 .services__banner--divider {
   margin: 2.4rem 0rem;
   width: 65%;
-  border-top: 10px solid white;
+}
+@media only screen and (min-width: 30em) {
+  .services__banner--divider {
+    border-top: 5px solid white;
+  }
 }
 .services__banner--text {
-  font-size: 2.5rem;
   font-family: "minion", "sans-serif";
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
   color: #ffffff;
 }
-.services__container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  background-image: url(../../../images/custom/splat_black_3.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@media only screen and (min-width: 30em) {
+  .services__banner--text {
+    font-size: 2rem;
+  }
 }
-.services__checklist {
-  flex: 1 0 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media only screen and (min-width: 48em) {
+  .services__banner--text {
+    font-size: 2.1rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .services__banner--text {
+    font-size: 2.3rem;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .services__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #010101;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .services__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .services__checklist {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .services__checklist {
+    width: 30%;
+  }
 }
 .services__production {
   position: relative;
-  flex: 1 0 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(10rem);
 }
-.services__features {
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+@media only screen and (min-width: 30em) {
+  .services__production {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.services__services {
-  padding: 12rem 4rem;
-  height: 55vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+@media only screen and (min-width: 62em) {
+  .services__production {
+    width: 65%;
+  }
 }
-
+@media only screen and (min-width: 30em) {
+  .services__features {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .services__features {
+    margin: 6rem 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .services__services {
+    margin-bottom: 5rem;
+  }
+}
 .checklist__title {
-  margin-bottom: 2rem;
-  font-size: 3rem;
+  text-align: center;
   font-family: "noteworthy", "sans-serif";
   color: #e1e31f;
-  align-self: center;
-  border-bottom: 0.8rem solid white !important;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 30em) {
+  .checklist__title {
+    font-size: 3rem;
+  }
+}
+.checklist__title::after {
+  content: "";
+  width: 15rem;
+  height: 0.5rem;
+  background-color: #ffffff;
+}
+@media only screen and (min-width: 62em) {
+  .checklist__title::after {
+    width: 14rem;
+  }
 }
 .checklist__item {
   margin-top: 2rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .checklist__item--icon {
-  height: 4rem !important;
   margin: 0rem 1rem;
 }
+@media only screen and (min-width: 30em) {
+  .checklist__item--icon {
+    height: 3rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .checklist__item--icon {
+    font-size: 3.2rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .checklist__item--icon {
+    height: 4rem;
+  }
+}
 .checklist__item--text {
-  font-size: 2.8rem;
   font-family: "noteworthy", "sans-serif";
+  letter-spacing: 0.05rem;
+  line-height: 1;
   color: #e1e31f;
 }
+@media only screen and (min-width: 30em) {
+  .checklist__item--text {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .checklist__item--text {
+    font-size: 2.7rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .checklist__item--text {
+    font-size: 2.8rem;
+  }
+}
 
-.production {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  margin-left: 3rem;
+@media only screen and (min-width: 30em) {
+  .production {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .production__title {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .production__title--text {
-  font-size: 3.9rem;
   font-family: "noteworthy", "sans-serif";
+  letter-spacing: 0.05rem;
+  line-height: 1;
   color: #ffffff;
-  margin-right: 3rem;
 }
-.production__title--icon {
-  height: 6.5rem;
+@media only screen and (min-width: 30em) {
+  .production__title--text {
+    font-size: 2.6rem;
+  }
 }
-.production__splat {
-  margin-top: 5rem;
-  height: 75%;
-  width: 90%;
-  background-image: url(../../../images/custom/splat_yellow_2.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
+@media only screen and (min-width: 48em) {
+  .production__title--text {
+    font-size: 2.8rem;
+  }
 }
-.production__splat--text {
-  padding: 3rem;
-  font-size: 2.5rem;
+@media only screen and (min-width: 62em) {
+  .production__title--text {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .production__title--text {
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .production__title--icon {
+    height: 4rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .production__title--icon {
+    height: 4.5rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .production__title--icon {
+    height: 5.5rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .production__title--icon {
+    height: 6.5rem;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .production__description {
+    margin: 2rem 3rem;
+    padding: 1.6rem 1.6rem 8rem 1.6rem;
+    background: #e1e31f;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .production__description {
+    margin: 3rem 5rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .production__description {
+    margin: 2rem 3rem;
+    transform: translateY(20%);
+  }
+}
+.production__description--text {
   font-family: "minion", "sans-serif";
+  letter-spacing: 0.05rem;
+  line-height: 1.5;
   color: #010101;
+}
+@media only screen and (min-width: 30em) {
+  .production__description--text {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .production__description--text {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .production__description--text {
+    font-size: 2.4rem;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .production__description--text {
+    font-size: 2.5rem;
+  }
 }
 
 .services-video__banner {

@@ -1,8 +1,6 @@
 .services {
     &__banner {
-        position: relative;
         height: 35vh;
-        padding: 3rem 6rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -11,134 +9,336 @@
         background-image: linear-gradient(to right, transparent, transparent),
             url(../../../images/4x/background-1-4x.png);
         background-size: cover;
+        @include respond(viewport-4) {
+            padding: 3rem 2rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            padding: 3rem 4rem;
+        }
+        @include respond(viewport-12) {
+        }
 
         &--title {
-            font-size: 4rem !important;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
             color: $color-white;
+            @include respond(viewport-4) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.8rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                font-size: 3rem;
+            }
         }
 
         &--divider {
             margin: 2.4rem 0rem;
             width: 65%;
-            border-top: 10px solid white;
+            @include respond(viewport-4) {
+                border-top: 5px solid white;
+            }
+            @include respond(viewport-7) {
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+            }
         }
 
         &--text {
-            font-size: 2.5rem;
             font-family: $font-minion;
+            letter-spacing: 0.1rem;
+            line-height: 1.5;
             color: $color-white;
+            @include respond(viewport-4) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.1rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                font-size: 2.3rem;
+            }
         }
     }
 
     &__container {
-        position: relative;
-        height: 100%;
-        width: 100%;
-
-        display: flex;
-        flex-direction: row;
-        background-image: url(../../../images/custom/splat_black_3.svg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        @include respond(viewport-4) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $color-black;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__checklist {
-        flex: 1 0 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include respond(viewport-4) {
+            margin: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            width: 30%;
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__production {
         position: relative;
-        flex: 1 0 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transform: translateY(10rem);
+
+        @include respond(viewport-4) {
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            width: 65%;
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__features {
-        padding: 3rem 2rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include respond(viewport-4) {
+            margin: 4rem 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            margin: 6rem 2rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__services {
-        padding: 12rem 4rem;
-        height: 55vh;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include respond(viewport-4) {
+            margin-bottom: 5rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
     }
 }
 
 .checklist {
+    @include respond(viewport-4) {
+    }
+    @include respond(viewport-7) {
+    }
+    @include respond(viewport-9) {
+    }
+    @include respond(viewport-12) {
+    }
     &__title {
-        margin-bottom: 2rem;
-        font-size: 3rem;
+        text-align: center;
         font-family: $font-noteworthy;
         color: $color-yellow;
-        align-self: center;
-        border-bottom: 0.8rem solid white !important;
+        letter-spacing: 0.1rem;
+        line-height: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include respond(viewport-4) {
+            font-size: 3rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
+        &::after {
+            content: '';
+            width: 15rem;
+            height: 0.5rem;
+            background-color: $color-white;
+
+            @include respond(viewport-9) {
+                width: 14rem;
+            }
+        }
     }
 
     &__item {
         margin-top: 2rem;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        @include respond(viewport-4) {
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
 
         &--icon {
-            height: 4rem !important;
             margin: 0rem 1rem;
+            @include respond(viewport-4) {
+                height: 3rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 3.2rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                height: 4rem;
+            }
         }
         &--text {
-            font-size: 2.8rem;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
             color: $color-yellow;
+            @include respond(viewport-4) {
+                font-size: 2.5rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.7rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                font-size: 2.8rem;
+            }
         }
     }
 }
 
 .production {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 3rem;
+    @include respond(viewport-4) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include respond(viewport-7) {
+    }
+    @include respond(viewport-9) {
+    }
+    @include respond(viewport-12) {
+    }
     &__title {
+        width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+        @include respond(viewport-4) {
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
         &--text {
-            font-size: 3.9rem;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
             color: $color-white;
-            margin-right: 3rem;
+            @include respond(viewport-4) {
+                font-size: 2.6rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.8rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 3.5rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 4rem;
+            }
         }
         &--icon {
-            height: 6.5rem;
+            @include respond(viewport-4) {
+                height: 4rem;
+            }
+            @include respond(viewport-7) {
+                height: 4.5rem;
+            }
+            @include respond(viewport-9) {
+                height: 5.5rem;
+            }
+            @include respond(viewport-12) {
+                height: 6.5rem;
+            }
         }
     }
-    &__splat {
-        margin-top: 5rem;
-        height: 75%;
-        width: 90%;
-        background-image: url(../../../images/custom/splat_yellow_2.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
+    &__description {
+        @include respond(viewport-4) {
+            margin: 2rem 3rem;
+            padding: 1.6rem 1.6rem 8rem 1.6rem;
+            background: $color-yellow;
+        }
+        @include respond(viewport-7) {
+            margin: 3rem 5rem;
+        }
+        @include respond(viewport-9) {
+            margin: 2rem 3rem;
+            transform: translateY(20%);
+        }
+        @include respond(viewport-12) {
+        }
 
         &--text {
-            padding: 3rem;
-            font-size: 2.5rem;
             font-family: $font-minion;
+            letter-spacing: 0.05rem;
+            line-height: 1.5;
             color: $color-black;
+            @include respond(viewport-4) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.5rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 2.4rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2.5rem;
+            }
         }
     }
 }
