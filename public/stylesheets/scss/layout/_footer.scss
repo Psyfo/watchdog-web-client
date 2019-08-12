@@ -1,8 +1,37 @@
 .footer {
-    padding: 5rem 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include respond(viewport-4) {
+        height: 10vh;
+    }
+    @include respond(viewport-7) {
+    }
+    @include respond(viewport-9) {
+    }
+    @include respond(viewport-12) {
+    }
 
     &__item {
-        font-size: 2.3rem !important;
         font-family: $font-noteworthy;
+        color: $color-black;
+        letter-spacing: 0.1rem;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(viewport-4) {
+            height: 10vh;
+            font-size: 1.5rem;
+        }
+        @include respond(viewport-7) {
+            height: 7vh;
+            font-size: 1.8rem;
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
     }
 }

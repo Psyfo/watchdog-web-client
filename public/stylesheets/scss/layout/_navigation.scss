@@ -19,16 +19,28 @@
 
 .navigation {
     width: 100%;
-    height: 6rem;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 30% repeat(6, minmax(max-content, auto));
     align-items: center;
     transition: all 0.3s linear;
+    @include respond(viewport-4) {
+        height: 7vh;
+        grid-template-columns: 5% repeat(6, minmax(max-content, auto)) 5%;
+    }
+    @include respond(viewport-7) {
+        grid-template-columns: 5% repeat(6, minmax(max-content, auto)) 5%;
+    }
+    @include respond(viewport-9) {
+        grid-template-columns: 30% repeat(6, minmax(max-content, auto));
+    }
+    @include respond(viewport-12) {
+        grid-template-columns: 30% repeat(6, minmax(max-content, auto));
+    }
 
     &__item {
         position: relative;
         display: grid;
+        align-items: center;
     }
     &__item--droppable {
         position: relative;
@@ -43,10 +55,23 @@
         &:link,
         &:visited {
             text-decoration: none;
-            font-size: 2rem;
             font-family: $font-noteworthy;
+            letter-spacing: 0.1rem;
+            line-height: 1;
             color: darkslategrey;
             cursor: pointer;
+            @include respond(viewport-4) {
+                font-size: 1.4rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 1.7rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.9rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2.1rem;
+            }
         }
         &:hover {
             transform: scale(1.1);
@@ -63,8 +88,10 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
-        transform: translateY(0.5rem);
     }
+}
+
+.navigation-mobile {
 }
 
 .services__menu {

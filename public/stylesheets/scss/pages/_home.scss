@@ -5,30 +5,96 @@
         background-image: linear-gradient(to right, transparent, transparent),
             url(../../../images/4x/background-1-4x.png);
         background-size: cover;
+        background-position: center;
+        @include respond(viewport-4) {
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
+
+        grid-template-columns: 5% repeat(6, minmax(max-content, auto)) 5%;
 
         &--logo {
-            height: 25rem;
             position: absolute;
-            bottom: 6rem;
+            bottom: 8rem;
             z-index: 1000;
+            @include respond(viewport-4) {
+                height: 12rem;
+            }
+            @include respond(viewport-7) {
+                height: 14rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                height: 18rem;
+            }
         }
 
         &--text {
-            font-size: 3rem;
             color: $color-white;
             font-family: $font-noteworthy;
-            position: absolute;
-            bottom: 3rem;
-            right: 10rem;
+            letter-spacing: 0.1rem;
+            line-height: 1;
+
+            @include respond(viewport-4) {
+                position: absolute;
+                bottom: 3rem;
+                right: 2rem;
+                font-size: 1.8rem;
+            }
+            @include respond(viewport-7) {
+                position: absolute;
+                bottom: 3rem;
+                right: 3rem;
+                font-size: 2rem;
+            }
+            @include respond(viewport-9) {
+                position: absolute;
+                bottom: 3rem;
+                right: 3rem;
+                font-size: 2.2rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 3rem;
+            }
         }
     }
 
     &__welcome {
-        padding: 5rem 8rem;
-
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        @include respond(viewport-4) {
+            margin: 4rem 2rem;
+        }
+        @include respond(viewport-7) {
+            margin: 4rem 4rem;
+        }
+        @include respond(viewport-9) {
+            margin: 6rem 6rem;
+        }
+        @include respond(viewport-12) {
+        }
         &--title {
-            font-size: 3rem;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
+            @include respond(viewport-4) {
+                font-size: 2.1rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.3rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                font-size: 2.5rem;
+            }
         }
 
         &--divider {
@@ -38,20 +104,54 @@
             border-top: 5px solid $color-black;
             margin-top: 2rem;
             margin-bottom: 3rem;
+            @include respond(viewport-4) {
+                border-top: 3px solid $color-black;
+            }
+            @include respond(viewport-7) {
+                border-top: 5px solid $color-black;
+            }
+            @include respond(viewport-9) {
+                border-top: 5px solid $color-black;
+            }
+            @include respond(viewport-12) {
+                border-top: 5px solid $color-black;
+            }
         }
 
         &--text {
-            font-size: 2.5rem;
             font-family: $font-minion;
+            letter-spacing: 0.05rem;
+            line-height: 1.5;
+            @include respond(viewport-4) {
+                font-size: 1.9rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 2.2rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2.5rem;
+            }
         }
     }
 
     &__features {
-        padding: 3rem 2rem;
-        display: flex;
-        flex-basis: 33%;
-        flex-grow: 1;
-        flex-direction: row;
-        justify-content: space-between;
+        @include respond(viewport-4) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        @include respond(viewport-12) {
+        }
     }
 }

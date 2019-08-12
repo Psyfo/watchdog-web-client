@@ -29,29 +29,327 @@
             color: $color-white;
         }
     }
+    &__header {
+        margin-top: 3rem;
+        padding: 10rem;
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        @include respond(viewport-4) {
+            padding: 0;
+        }
+        @include respond(viewport-7) {
+            padding: 8rem;
+        }
+        @include respond(viewport-9) {
+            padding: 9rem;
+        }
+        @include respond(viewport-12) {
+            padding: 10rem;
+        }
+
+        &--title {
+            font-family: $font-noteworthy;
+            color: $color-black;
+            letter-spacing: 0.1rem;
+            line-height: 1;
+            text-transform: uppercase;
+            @include respond(viewport-4) {
+                margin-bottom: 0;
+                font-size: 2.2rem;
+            }
+            @include respond(viewport-7) {
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 2.7rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 3rem;
+            }
+        }
+        &--text {
+            font-family: $font-minion;
+            color: $color-black;
+            letter-spacing: 0.1rem;
+            line-height: 1.5;
+            text-align: center;
+
+            @include respond(viewport-4) {
+                font-size: 1.5rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 1.65rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.8rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 1.9rem;
+            }
+        }
+    }
 
     &__content {
-        width: 100%;
-        display: grid;
-        grid-template-rows: 15rem auto auto auto;
-        grid-row-gap: 2rem;
-        grid-template-columns: [main-start] 5% [content-start] auto [content-end] 5% [main-end];
+        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        @include respond(viewport-4) {
+        }
+        @include respond(viewport-7) {
+            margin: 6rem 10%;
+        }
+        @include respond(viewport-9) {
+            margin: 6rem 0;
+            height: 70vh;
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+        }
+        @include respond(viewport-12) {
+            height: 70vh;
+            display: grid;
+            grid-template-columns: repeat(16, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+        }
     }
+    &__media-manager {
+        background-color: $color-light-cyan;
+        display: flex;
+        flex-direction: column;
 
-    &__title {
-        font-size: 3rem;
-        font-family: $font-noteworthy;
-        color: $color-black;
-        letter-spacing: 0.1rem;
+        @include respond(viewport-4) {
+            height: 25rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            grid-column: 1/10;
+            grid-row: 2/7;
+        }
+        @include respond(viewport-12) {
+            grid-column: 1/10;
+            grid-row: 2/7;
+        }
+
+        &--title {
+            height: 30%;
+            background-color: $color-deep-sky-blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-noteworthy;
+            color: $color-black;
+            letter-spacing: 0.1rem;
+            line-height: 1;
+            transform: translateY(-50%);
+            clip-path: polygon(
+                0 25%,
+                25% 25%,
+                25% 0,
+                75% 0,
+                75% 25%,
+                100% 25%,
+                100% 75%,
+                75% 75%,
+                75% 100%,
+                25% 100%,
+                25% 75%,
+                0 75%
+            );
+            @include respond(viewport-4) {
+                font-size: 1.7rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 1.8rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.9rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2.1rem;
+            }
+        }
+        &--text {
+            font-family: $font-minion;
+            color: $color-black;
+            letter-spacing: 0.1rem;
+            line-height: 2;
+            justify-self: center;
+            align-self: center;
+            margin: 0 3rem;
+
+            @include respond(viewport-4) {
+                font-size: 1.85rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.9rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2rem;
+            }
+        }
     }
-}
+    &__media-assistant {
+        background-color: $color-light-cyan;
+        display: flex;
+        flex-direction: column;
 
-.social-collage {
-    grid-column: content-start/content-end;
-    grid-row: 1/2;
-    height: 100%;
-    background-image: url(../../../images/custom/social_media.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    align-self: center;
+        @include respond(viewport-4) {
+            height: 25rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            grid-column: 1/10;
+            grid-row: 6/-1;
+        }
+        @include respond(viewport-12) {
+            grid-column: 1/10;
+            grid-row: 6/-1;
+        }
+
+        &--title {
+            height: 30%;
+            background-color: $color-hollywood-cerise;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.1rem;
+            font-family: $font-noteworthy;
+            color: $color-black;
+            letter-spacing: 0.1rem;
+            line-height: 1;
+            transform: translateY(-50%);
+            clip-path: polygon(
+                0 25%,
+                25% 25%,
+                25% 0,
+                75% 0,
+                75% 25%,
+                100% 25%,
+                100% 75%,
+                75% 75%,
+                75% 100%,
+                25% 100%,
+                25% 75%,
+                0 75%
+            );
+            @include respond(viewport-4) {
+                font-size: 1.7rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 1.8rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.9rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2.1rem;
+            }
+        }
+        &--text {
+            font-family: $font-minion;
+            color: $color-black;
+            letter-spacing: 0.1rem;
+            line-height: 2;
+            justify-self: center;
+            align-self: center;
+            margin: 0 3rem;
+
+            @include respond(viewport-4) {
+                font-size: 1.85rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.9rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2rem;
+            }
+        }
+    }
+    &__checklist {
+        background-color: $color-black;
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        @include respond(viewport-4) {
+            margin-top: 3rem;
+            height: 65vh;
+            padding: 0 4rem;
+        }
+        @include respond(viewport-7) {
+            padding: 0 8rem;
+        }
+        @include respond(viewport-9) {
+            margin: 0;
+            grid-column: 11/-1;
+            grid-row: 1/-1;
+            padding: 0;
+            padding-left: 3rem;
+        }
+        @include respond(viewport-12) {
+            grid-column: 11/-1;
+            grid-row: 1/-1;
+            padding: 0;
+        }
+        &--title {
+            text-align: center;
+            font-family: $font-noteworthy;
+            color: $color-yellow;
+            letter-spacing: 0.1rem;
+            line-height: 2;
+            display: flex;
+            flex-direction: column;
+            @include respond(viewport-4) {
+                font-size: 3rem;
+            }
+            @include respond(viewport-7) {
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+            }
+            &::after {
+                content: '';
+                width: 15rem;
+                height: 0.5rem;
+                background-color: $color-white;
+
+                @include respond(viewport-9) {
+                    width: 14rem;
+                }
+            }
+        }
+        &--list {
+            margin: 0 3rem;
+            list-style: none;
+            list-style-image: url(../../../images/custom/tick_url.svg);
+            font-size: 1.5rem;
+            & > li {
+                font-size: 1.5rem;
+                font-family: $font-noteworthy;
+                color: $color-yellow;
+                letter-spacing: 0.1rem;
+                line-height: 2;
+
+                @include respond(viewport-9) {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
 }

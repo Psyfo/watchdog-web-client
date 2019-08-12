@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    .container
+    .ui.container
         section.about__banner
                 .about__banner--title WELCOME TO WATCHDOG MEDIA
                 .about__banner--divider
@@ -9,22 +9,19 @@ block content
 
         section.about__features
             .feature
-                .feature__icon 
-                    img(src="images/2x/shredder@2x.png", alt="paper shredder")
+                img(src="images/custom/shredder.svg", alt="paper shredder").feature__icon 
                 .feature__title Digital Consultation
                 .feature__content Discuss requirements and provide a step-by-step guide detailing creative and logistic deliverables
 
             .feature
-                .feature__icon
-                    img(src="images/2x/lamp@2x.png", alt="paper shredder")
+                img(src="images/custom/lamp.svg", alt="paper shredder").feature__icon
                 .feature__title Niche Packages
                 .feature__content Create unique packages to meet your needs
 
             .feature
-                .feature__icon
-                    img(src="images/2x/telescope@2x.png", alt="telescope")
+                img(src="images/custom/telescope.svg", alt="telescope").feature__icon
                 .feature__title Marketing Outlook
-                .feature__content Combine marketing elements with video to create brand presence
+                .feature__content Combine  marketing elements with video to create brand presence
 
         section.about__philosophies
             .philosophy__statement
@@ -37,16 +34,13 @@ block content
                     p Transform the African landscape of Digital Content and Media into one which is authentic to its people and is profitable.
             .philosophy__slogan
                 .philosophy__slogan--item
-                    .philosophy__slogan--image
-                        img(src="images/custom/about_entertain.svg", alt="entertain")
+                    img(src="images/custom/about_entertain.svg", alt="entertain").philosophy__slogan--image
                     .philosophy__slogan--text ENTERTAIN
                 .philosophy__slogan--divider
                 .philosophy__slogan--item
-                    .philosophy__slogan--image
-                        img(src="images/custom/about_educate.svg", alt="educate")
+                    img(src="images/custom/about_educate.svg", alt="educate").philosophy__slogan--image
                     .philosophy__slogan--text EDUCATE
                 .philosophy__slogan--divider
                 .philosophy__slogan--item
-                    .philosophy__slogan--image
-                        img(src="images/custom/about_evolve.svg", alt="evolve")
+                    img(src="images/custom/about_evolve.svg", alt="evolve").philosophy__slogan--image
                     .philosophy__slogan--text EVOLVE

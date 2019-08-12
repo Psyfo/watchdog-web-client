@@ -1,30 +1,26 @@
 extends layout
 
 block content
-    .container
+    .ui.container
         section.home__banner
             img.logo(class="home__banner--logo", src="./images/1x/logo_watchdog.png", alt="watchdog logo")
             .home__banner--text Staying ahead of the pack in the digital space
         section.home__welcome
-            .text-center
-                .home__welcome--title WELCOME TO WATCHDOG MEDIA
-                .home__welcome--divider
-                .home__welcome--text Watchdog Media is a digital marketing company creating tailor-made quality videos and digital content for individuals and companies
+            .home__welcome--title WELCOME TO WATCHDOG MEDIA
+            .home__welcome--divider
+            .home__welcome--text Watchdog Media is a digital marketing company creating tailor-made quality videos and digital content for individuals and companies
         section.home__features
             .feature
-                .feature__icon 
-                    img(src="./images/2x/shredder@2x.png", alt="paper shredder")
+                img(src="images/custom/shredder.svg", alt="paper shredder").feature__icon 
                 .feature__title Digital Consultation
                 .feature__content Discuss requirements and provide a step-by-step guide detailing creative and logistic deliverables
 
             .feature
-                .feature__icon
-                    img(src="./images/2x/lamp@2x.png", alt="paper shredder")
+                img(src="images/custom/lamp.svg", alt="paper shredder").feature__icon
                 .feature__title Niche Packages
                 .feature__content Create unique packages to meet your needs
 
             .feature
-                .feature__icon
-                    img(src="./images/2x/telescope@2x.png", alt="telescope")
+                img(src="images/custom/telescope.svg", alt="telescope").feature__icon
                 .feature__title Marketing Outlook
                 .feature__content Combine  marketing elements with video to create brand presence

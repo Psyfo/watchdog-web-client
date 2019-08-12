@@ -14,24 +14,35 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
-    @if $breakpoint == phone {
-        @media only screen and (max-width: 37.5em) {
+    @if $breakpoint == viewport-0 {
+        @media only screen and (max-width: 29.74em) {
             @content;
-        } //600px
+        } //479px and below
     }
-    @if $breakpoint == tab-port {
-        @media only screen and (max-width: 56.25em) {
+    @if $breakpoint == viewport-4 {
+        @media only screen and (min-width: 30em) {
             @content;
-        } //900px
+        } //480px and above (phone)
     }
-    @if $breakpoint == tab-land {
-        @media only screen and (max-width: 75em) {
+    @if $breakpoint == viewport-7 {
+        @media only screen and (min-width: 48em) {
             @content;
-        } //1200px
+        } //768px and above (tablet portrait)
     }
-    @if $breakpoint == big-desktop {
+    @if $breakpoint == viewport-9 {
+        @media only screen and (min-width: 62em) {
+            @content;
+        } //992px and above (tablet landscape)
+    }
+    @if $breakpoint == viewport-12 {
+        @media only screen and (min-width: 75em) {
+            @content;
+        } //1200 and above (laptop)
+    }
+
+    @if $breakpoint == viewport-18 {
         @media only screen and (min-width: 112.5em) {
             @content;
-        } //1800
+        } //1800 and above (large desktops)
     }
 }

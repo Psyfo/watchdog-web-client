@@ -1,7 +1,6 @@
 .about {
     &__banner {
         height: 35vh;
-        padding: 3rem 6rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -10,91 +9,262 @@
         background-image: linear-gradient(to right, transparent, transparent),
             url(../../../images/4x/background-1-4x.png);
         background-size: cover;
+        @include respond(viewport-4) {
+            padding: 3rem 2rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            padding: 3rem 4rem;
+        }
+        @include respond(viewport-12) {
+        }
 
         &--title {
-            font-size: 4rem !important;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
             color: $color-white;
+            @include respond(viewport-4) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.8rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                font-size: 3rem;
+            }
         }
 
         &--divider {
             margin: 2.4rem 0rem;
             width: 65%;
-            border-top: 10px solid white;
+            @include respond(viewport-4) {
+                border-top: 5px solid white;
+            }
+            @include respond(viewport-7) {
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+            }
         }
 
         &--text {
-            font-size: 2.5rem;
             font-family: $font-minion;
+            letter-spacing: 0.1rem;
+            line-height: 1.5;
             color: $color-white;
+            @include respond(viewport-4) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2.1rem;
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+                font-size: 2.3rem;
+            }
         }
     }
 
     &__features {
-        padding: 3rem 2rem;
-        display: flex;
-        flex-basis: 33%;
-        flex-grow: 1;
-        flex-direction: row;
-        justify-content: space-between;
+        @include respond(viewport-4) {
+            margin: 4rem 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            margin: 6rem 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__philosophies {
-        height: 50vh;
-        padding: 4rem 2rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: black;
+        background-color: $color-black;
+        @include respond(viewport-4) {
+            padding: 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            height: 55vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include respond(viewport-12) {
+        }
     }
 }
 
 .philosophy {
-    padding: 4rem;
+    @include respond(viewport-4) {
+    }
+    @include respond(viewport-7) {
+    }
+    @include respond(viewport-9) {
+    }
+    @include respond(viewport-12) {
+    }
     &__statement {
-        padding: 2rem;
-        flex-grow: 1;
-        flex-basis: 33.33%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        @include respond(viewport-4) {
+            margin-bottom: 4rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+            width: 40%;
+        }
+        @include respond(viewport-12) {
+        }
 
         &--title {
-            font-size: 3.8rem;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
             text-align: center;
             color: $color-white;
+            @include respond(viewport-4) {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 3rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 3.2rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 3.8rem;
+            }
         }
 
         &--text {
-            font-size: 2.2rem;
             font-family: $font-minion;
             color: $color-white;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.1rem;
+            line-height: 1.2rem;
             font-weight: lighter;
+            @include respond(viewport-4) {
+                font-size: 1.8rem;
+                padding: 0.5rem 0;
+            }
+            @include respond(viewport-7) {
+                font-size: 2rem;
+                padding: 1rem 3rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 1.8rem;
+                padding: 1rem 1.5rem;
+            }
+            @include respond(viewport-12) {
+                font-size: 2rem;
+                padding: 1rem 1.5rem;
+            }
         }
     }
 
     &__slogan {
-        flex-grow: 2;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        font-family: $font-minion;
+
+        @include respond(viewport-4) {
+            height: 10rem;
+            width: 100%;
+        }
+        @include respond(viewport-7) {
+            height: 12rem;
+            justify-content: space-around;
+        }
+        @include respond(viewport-9) {
+            height: 25rem;
+            width: 60%;
+        }
+        @include respond(viewport-12) {
+        }
+        &--item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @include respond(viewport-4) {
+            }
+            @include respond(viewport-7) {
+            }
+            @include respond(viewport-9) {
+            }
+            @include respond(viewport-12) {
+            }
+        }
 
         &--image {
-            display: flex;
-            justify-content: center;
+            @include respond(viewport-4) {
+                height: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            @include respond(viewport-7) {
+                height: 3rem;
+            }
+            @include respond(viewport-9) {
+                height: 3.5rem;
+            }
+            @include respond(viewport-12) {
+                height: 4rem;
+                margin-bottom: 1.5rem;
+            }
         }
         &--text {
-            font-size: 3rem;
             font-family: $font-noteworthy;
+            letter-spacing: 0.05rem;
+            line-height: 1;
             color: $color-yellow;
+            @include respond(viewport-4) {
+                font-size: 1.8rem;
+            }
+            @include respond(viewport-7) {
+                font-size: 2rem;
+            }
+            @include respond(viewport-9) {
+                font-size: 2.3rem;
+            }
+            @include respond(viewport-12) {
+            }
         }
         &--divider {
             height: 60%;
-            border-left: 10px solid $color-yellow;
+            @include respond(viewport-4) {
+                border-left: 5px solid $color-yellow;
+            }
+            @include respond(viewport-7) {
+            }
+            @include respond(viewport-9) {
+                border-left: 8px solid $color-yellow;
+            }
+            @include respond(viewport-12) {
+            }
         }
     }
 }

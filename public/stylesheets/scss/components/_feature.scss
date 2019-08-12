@@ -1,31 +1,71 @@
 .feature {
-    padding: 0rem 2rem;
     display: flex;
-    flex-basis: 33%;
-    flex-grow: 1;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 
+    @include respond(viewport-4) {
+        padding: 0 5%;
+        margin-bottom: 6rem;
+    }
+    @include respond(viewport-7) {
+        padding: 0 10%;
+    }
+    @include respond(viewport-9) {
+        width: 30%;
+        padding: 0;
+    }
+    @include respond(viewport-12) {
+    }
+
     &__icon {
-        height: 14rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
+        @include respond(viewport-4) {
+            height: 7rem;
+            margin-bottom: 1rem;
+        }
+        @include respond(viewport-7) {
+            height: 8.5rem;
+        }
+        @include respond(viewport-9) {
+            height: 7rem;
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__title {
-        font-size: 2rem !important;
         font-family: $font-noteworthy;
         font-weight: bold;
+        letter-spacing: 0.05rem;
         line-height: 3rem;
+        @include respond(viewport-4) {
+            font-size: 2.3rem;
+            margin: 2rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
     }
 
     &__content {
-        min-height: 14rem;
-        font-size: 2.4rem;
+        font-family: $font-minion;
+        letter-spacing: 0.05rem;
+        line-height: 1.5;
         text-align: center;
+        @include respond(viewport-4) {
+            font-size: 2.2rem;
+        }
+        @include respond(viewport-7) {
+        }
+        @include respond(viewport-9) {
+        }
+        @include respond(viewport-12) {
+        }
     }
 }
 
