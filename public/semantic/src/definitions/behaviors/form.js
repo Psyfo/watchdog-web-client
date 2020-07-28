@@ -95,6 +95,9 @@ $.fn.form = function(parameters) {
             module.verbose('Initializing form validation', $module, settings);
             module.bindEvents();
             module.set.defaults();
+            if (settings.autoCheckRequired) {
+              module.set.autoCheck();
+            }
             module.instantiate();
           }
         },
@@ -168,7 +171,7 @@ $.fn.form = function(parameters) {
           }
 
           $field.on('change click keyup keydown blur', function(e) {
-            $(this).trigger(e.type + ".dirty");
+            $(this).triggerHandler(e.type + ".dirty");
           });
 
           $field.on('change.dirty click.dirty keyup.dirty keydown.dirty blur.dirty', module.determine.isDirty);
@@ -192,8 +195,8 @@ $.fn.form = function(parameters) {
               $calendar    = $field.closest(selector.uiCalendar),
               defaultValue = $field.data(metadata.defaultValue) || '',
               isCheckbox   = $element.is(selector.uiCheckbox),
-              isDropdown   = $element.is(selector.uiDropdown),
-              isCalendar   = ($calendar.length > 0),
+              isDropdown   = $element.is(selector.uiDropdown)  && module.can.useElement('dropdown'),
+              isCalendar   = ($calendar.length > 0  && module.can.useElement('calendar')),
               isErrored    = $fieldGroup.hasClass(className.error)
             ;
             if(isErrored) {
@@ -203,7 +206,7 @@ $.fn.form = function(parameters) {
             }
             if(isDropdown) {
               module.verbose('Resetting dropdown value', $element, defaultValue);
-              $element.dropdown('clear');
+              $element.dropdown('clear', true);
             }
             else if(isCheckbox) {
               $field.prop('checked', false);
@@ -228,8 +231,8 @@ $.fn.form = function(parameters) {
               $prompt      = $fieldGroup.find(selector.prompt),
               defaultValue = $field.data(metadata.defaultValue),
               isCheckbox   = $element.is(selector.uiCheckbox),
-              isDropdown   = $element.is(selector.uiDropdown),
-              isCalendar   = ($calendar.length > 0),
+              isDropdown   = $element.is(selector.uiDropdown)  && module.can.useElement('dropdown'),
+              isCalendar   = ($calendar.length > 0  && module.can.useElement('calendar')),
               isErrored    = $fieldGroup.hasClass(className.error)
             ;
             if(defaultValue === undefined) {
@@ -242,7 +245,7 @@ $.fn.form = function(parameters) {
             }
             if(isDropdown) {
               module.verbose('Resetting dropdown value', $element, defaultValue);
-              $element.dropdown('restore defaults');
+              $element.dropdown('restore defaults', true);
             }
             else if(isCheckbox) {
               module.verbose('Resetting checkbox value', $element, defaultValue);
@@ -542,7 +545,7 @@ $.fn.form = function(parameters) {
               name
             ;
             if(requiresValue) {
-              prompt = prompt.replace('{value}', $field.val());
+              prompt = prompt.replace(/\{value\}/g, $field.val());
             }
             if(requiresName) {
               $label = $field.closest(selector.group).find('label').eq(0);
@@ -550,10 +553,10 @@ $.fn.form = function(parameters) {
                 ? $label.text()
                 : $field.prop('placeholder') || settings.text.unspecifiedField
               ;
-              prompt = prompt.replace('{name}', name);
+              prompt = prompt.replace(/\{name\}/g, name);
             }
-            prompt = prompt.replace('{identifier}', field.identifier);
-            prompt = prompt.replace('{ruleValue}', ancillary);
+            prompt = prompt.replace(/\{identifier\}/g, field.identifier);
+            prompt = prompt.replace(/\{ruleValue\}/g, ancillary);
             if(!rule.prompt) {
               module.verbose('Using default validation prompt for type', prompt, ruleName);
             }
@@ -678,7 +681,7 @@ $.fn.form = function(parameters) {
                 isCheckbox   = $field.is(selector.checkbox),
                 isRadio      = $field.is(selector.radio),
                 isMultiple   = (name.indexOf('[]') !== -1),
-                isCalendar   = ($calendar.length > 0),
+                isCalendar   = ($calendar.length > 0  && module.can.useElement('calendar')),
                 isChecked    = (isCheckbox)
                   ? $field.is(':checked')
                   : false
@@ -703,7 +706,7 @@ $.fn.form = function(parameters) {
                 }
                 else {
                   if(isRadio) {
-                    if(values[name] === undefined || values[name] == false) {
+                    if(values[name] === undefined || values[name] === false) {
                       values[name] = (isChecked)
                         ? value || true
                         : false
@@ -795,6 +798,16 @@ $.fn.form = function(parameters) {
 
         },
 
+        can: {
+            useElement: function(element){
+               if ($.fn[element] !== undefined) {
+                   return true;
+               }
+               module.error(error.noElement.replace('{element}',element));
+               return false;
+            }
+        },
+
         escape: {
           string: function(text) {
             text =  String(text);
@@ -808,26 +821,36 @@ $.fn.form = function(parameters) {
             module.add.field(name, rules);
           },
           field: function(name, rules) {
+            // Validation should have at least a standard format
+            if(validation[name] === undefined || validation[name].rules === undefined) {
+              validation[name] = {
+                rules: []
+              };
+            }
             var
-              newValidation = {}
+              newValidation = {
+                rules: []
+              }
             ;
             if(module.is.shorthandRules(rules)) {
               rules = Array.isArray(rules)
                 ? rules
                 : [rules]
               ;
-              newValidation[name] = {
-                rules: []
-              };
-              $.each(rules, function(index, rule) {
-                newValidation[name].rules.push({ type: rule });
+              $.each(rules, function(_index, rule) {
+                newValidation.rules.push({ type: rule });
               });
             }
             else {
-              newValidation[name] = rules;
+              newValidation.rules = rules.rules;
             }
-            validation = $.extend({}, validation, newValidation);
-            module.debug('Adding rules', newValidation, validation);
+            // For each new rule, check if there's not already one with the same type
+            $.each(newValidation.rules, function (_index, rule) {
+              if ($.grep(validation[name].rules, function(item){ return item.type == rule.type; }).length == 0) {
+                validation[name].rules.push(rule);
+              }
+            });
+            module.debug('Adding rules', newValidation.rules, validation);
           },
           fields: function(fields) {
             var
@@ -869,7 +892,7 @@ $.fn.form = function(parameters) {
                 .html(errors[0])
               ;
               if(!promptExists) {
-                if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
+                if(settings.transition && module.can.useElement('transition') && $module.transition('is supported')) {
                   module.verbose('Displaying error with css transition', settings.transition);
                   $prompt.transition(settings.transition + ' in', settings.duration);
                 }
@@ -951,7 +974,7 @@ $.fn.form = function(parameters) {
             ;
             if(settings.inline && $prompt.is(':visible')) {
               module.verbose('Removing prompt for field', identifier);
-              if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
+              if(settings.transition  && module.can.useElement('transition') && $module.transition('is supported')) {
                 $prompt.transition(settings.transition + ' out', settings.duration, function() {
                   $prompt.remove();
                 });
@@ -980,13 +1003,18 @@ $.fn.form = function(parameters) {
                 $el        = $(el),
                 $parent    = $el.parent(),
                 isCheckbox = ($el.filter(selector.checkbox).length > 0),
-                isDropdown = $parent.is(selector.uiDropdown),
+                isDropdown = $parent.is(selector.uiDropdown) && module.can.useElement('dropdown'),
+                $calendar   = $el.closest(selector.uiCalendar),
+                isCalendar  = ($calendar.length > 0  && module.can.useElement('calendar')),
                 value      = (isCheckbox)
                   ? $el.is(':checked')
                   : $el.val()
               ;
               if (isDropdown) {
                 $parent.dropdown('save defaults');
+              }
+              else if (isCalendar) {
+                $calendar.calendar('refresh');
               }
               $el.data(metadata.defaultValue, value);
               $el.data(metadata.isDirty, false);
@@ -1013,10 +1041,12 @@ $.fn.form = function(parameters) {
               var
                 $field      = module.get.field(key),
                 $element    = $field.parent(),
+                $calendar   = $field.closest(selector.uiCalendar),
                 isMultiple  = Array.isArray(value),
-                isCheckbox  = $element.is(selector.uiCheckbox),
-                isDropdown  = $element.is(selector.uiDropdown),
+                isCheckbox  = $element.is(selector.uiCheckbox)  && module.can.useElement('checkbox'),
+                isDropdown  = $element.is(selector.uiDropdown) && module.can.useElement('dropdown'),
                 isRadio     = ($field.is(selector.radio) && isCheckbox),
+                isCalendar  = ($calendar.length > 0  && module.can.useElement('calendar')),
                 fieldExists = ($field.length > 0),
                 $multipleField
               ;
@@ -1041,7 +1071,7 @@ $.fn.form = function(parameters) {
                 }
                 else if(isCheckbox) {
                   module.verbose('Setting checkbox value', value, $element);
-                  if(value === true) {
+                  if(value === true || value === 1) {
                     $element.checkbox('check');
                   }
                   else {
@@ -1051,6 +1081,9 @@ $.fn.form = function(parameters) {
                 else if(isDropdown) {
                   module.verbose('Setting dropdown value', value, $element);
                   $element.dropdown('set selected', value);
+                }
+                else if (isCalendar) {
+                  $calendar.calendar('set date',value);
                 }
                 else {
                   module.verbose('Setting field value', value, $field);
@@ -1086,6 +1119,32 @@ $.fn.form = function(parameters) {
           asDirty: function() {
             module.set.defaults();
             module.set.dirty();
+          },
+          autoCheck: function() {
+            module.debug('Enabling auto check on required fields');
+            $field.each(function (_index, el) {
+              var
+                $el        = $(el),
+                $elGroup   = $(el).closest($group),
+                isCheckbox = ($el.filter(selector.checkbox).length > 0),
+                isRequired = $el.prop('required') || $elGroup.hasClass(className.required) || $elGroup.parent().hasClass(className.required),
+                isDisabled = $el.prop('disabled') || $elGroup.hasClass(className.disabled) || $elGroup.parent().hasClass(className.disabled),
+                validation = module.get.validation($el),
+                hasEmptyRule = validation
+                  ? $.grep(validation.rules, function(rule) { return rule.type == "empty" }) !== 0
+                  : false,
+                identifier = validation.identifier || $el.attr('id') || $el.attr('name') || $el.data(metadata.validate)
+              ;
+              if (isRequired && !isDisabled && !hasEmptyRule && identifier !== undefined) {
+                if (isCheckbox) {
+                  module.verbose("Adding 'checked' rule on field", identifier);
+                  module.add.rule(identifier, "checked");
+                } else {
+                  module.verbose("Adding 'empty' rule on field", identifier);
+                  module.add.rule(identifier, "empty");
+                }
+              }
+            });
           }
         },
 
@@ -1425,6 +1484,7 @@ $.fn.form.settings = {
   transition        : 'scale',
   duration          : 200,
 
+  autoCheckRequired : false,
   preventLeaving    : false,
   dateHandling      : 'date', // 'date', 'input', 'formatter'
 
@@ -1505,17 +1565,20 @@ $.fn.form.settings = {
   },
 
   className : {
-    error   : 'error',
-    label   : 'ui basic red pointing prompt label',
-    pressed : 'down',
-    success : 'success'
+    error    : 'error',
+    label    : 'ui basic red pointing prompt label',
+    pressed  : 'down',
+    success  : 'success',
+    required : 'required',
+    disabled : 'disabled'
   },
 
   error: {
     identifier : 'You must specify a string identifier for each field',
     method     : 'The method you called is not defined.',
     noRule     : 'There is no rule matching the one you specified',
-    oldSyntax  : 'Starting in 2.0 forms now only take a single settings object. Validation settings converted to new syntax automatically.'
+    oldSyntax  : 'Starting in 2.0 forms now only take a single settings object. Validation settings converted to new syntax automatically.',
+    noElement  : 'This module requires ui {element}'
   },
 
   templates: {

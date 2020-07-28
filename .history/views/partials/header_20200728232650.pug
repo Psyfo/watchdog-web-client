@@ -1,0 +1,27 @@
+header
+    .ui.container
+        .navigation
+            .brand
+            .navigation__item
+                a.navigation__link(href="/") Home
+            .navigation__item
+                a.navigation__link(href="/about") About
+            .navigation__item--droppable
+                a.navigation__link#services__label(href="/services") Services
+                label.navigation__icon(for="services-menu" onclick="checkBox()")
+                input.services__toggler#services-menu(type="checkbox")
+                
+                .services__menu
+                            a.services__menu--link(href="/services-video") Video Production Services
+                            a.services__menu--link(href="/services-event") Event Videography
+                            a.services__menu--link(href="/services-corporate") Corporate/Training Videos
+                            a.services__menu--link(href="/services-social") Social Media
+            .navigation__item
+                a.navigation__link(href="/people") People
+            .navigation__item
+                a.navigation__link(href="/contact-us") Contact Us
+            .navigation__item
+                a.navigation__link(href="/previous-work") Previous Work
+
+        .navigation-mobile
+            
